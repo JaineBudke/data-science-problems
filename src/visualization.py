@@ -1,6 +1,10 @@
 import matplotlib.pyplot as plt
 import numpy as np
 import cv2
+from typing import List
+import seaborn as sns
+import pandas as pd
+
 
 class Visualization:
 
@@ -42,3 +46,24 @@ class Visualization:
         plt.title("Quantidade de imagens")
         plt.legend()
         plt.show()
+
+
+
+    def plot_distribution(self, data: List, graph_title: str, y_label: str) -> None:
+
+        plt.figure(figsize =(6, 5))
+        plt.boxplot(data)
+        plt.xlabel('Box plot')
+        plt.ylabel(y_label)
+        plt.title(graph_title)
+        plt.show()
+
+
+
+    def counter_plot(self, column: str, title_graph: str, df: pd.DataFrame) -> None:
+
+        plt.rcParams['figure.figsize'] = [4, 4]
+        sns.set(style = 'white', font_scale = 1)
+
+        b_plot = sns.countplot(x=df[column], data = df, palette = 'Set2')
+        b_plot = b_plot.set(title=title_graph,xlabel ="")
