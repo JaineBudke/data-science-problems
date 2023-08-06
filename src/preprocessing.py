@@ -49,3 +49,8 @@ class Preprocessing:
     def prepare_input(self, data):
 
         return np.array(data).reshape(-1, 1)
+
+
+    def prepare_to_nn(self, X_test, shape):
+
+        return np.array(X_test).reshape(shape)
