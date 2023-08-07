@@ -11,7 +11,17 @@ Os cenários abordados foram:
 
 Os arquivos disponíveis no diretório src foram utilizados para facilitar a análise do Cenário III.
 
-A proposta de arquitetura foi desenhada utilizando a ferramenta draw.io e está disponível no arquivo arquitetura.png e mais detalhadamente no pdf 'Arquitetura proposta'.
+A proposta de arquitetura foi desenhada utilizando a ferramenta draw.io:
+
+![alt text](https://github.com/jainebudke/data-science-problems/blob/main/arquitetura.png?raw=true)
+
+O fluxo proposto segue:
+- Utilizar um serviço de streaming para salvar as imagens processadas no Storage, assim como processar, extrair features e salvá-las em uma feature store;
+- Treinar o algoritmo (utilizando as features extraídas) em uma máquina no VertexAI;
+- Salvar modelo treinado no MLFlow, ferramenta de versionamento de modelos;
+- Utilizar a Cloud Run para deploy do modelo, criando uma API para classificar novas imagens;
+- Os resultados das predições podem ser salvos também no BigQuery, a fim de ter um histórico dos dados dos usuários e classificações;
+- Por fim, uma ferramenta de visualização, como a Looker, pode ser utilizada para analisar os resultados.
 
 
 ## Setup information
