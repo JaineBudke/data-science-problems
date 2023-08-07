@@ -11,7 +11,8 @@ Os cenários abordados foram:
 
 Os arquivos disponíveis no diretório src foram utilizados para facilitar a análise do Cenário III.
 
-A proposta de arquitetura foi desenhada utilizando a ferramenta draw.io e está disponível no arquivo arquitetura.png.
+A proposta de arquitetura foi desenhada utilizando a ferramenta draw.io e está disponível no arquivo arquitetura.png e mais detalhadamente no pdf 'Arquitetura proposta'.
+
 
 ## Setup information
 

@@ -36,10 +36,14 @@ class DataIngestion:
         Returns:
             List[pd.DataFrame]: Normalized dataframes.
         """
-        first_df = df.iloc[:, :5]
+
+        discount_col = df.pop('Discount')
+        df.insert(4, 'Discount', discount_col)
+
+        first_df = df.iloc[:, :4]
         first_df = first_df.groupby('NFeID').first()
 
-        second_df = df.iloc[:, 4:]
+        second_df = df.iloc[:, 3:]
         second_df = second_df.set_index('NFeID')
 
         return first_df, second_df
